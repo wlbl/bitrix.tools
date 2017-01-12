@@ -1,0 +1,26 @@
+{
+	"name": "wlbl/bitrix.tools",
+	"description": "Набор полезных хедперов для повседневной работы с Bitrix",
+	"keywords": ["bitrix"],
+	"homepage": "http://wlbl.ru",
+	"type": "bitrix-d7-module",
+	"license": "MIT",
+	"support": {
+		"email": "support@wlbl.ru",
+		"issues": "https://github.com/wlbl/bitrix.tools/issues",
+		"source": "https://github.com/wlbl/bitrix.tools"
+	},
+	"authors": [
+		{
+			"name": "Alexander Borisov",
+			"email": "borisov.a@wlbl.ru"
+		}
+	],
+	"extra": {
+		"installer-name": "tools"
+	},
+	"require": {
+		"php": ">=5.4.0",
+		"composer/installers": "~1",
+	}
+}
