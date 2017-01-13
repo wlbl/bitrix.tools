@@ -55,6 +55,14 @@ Class wlbl_tools extends CModule
 			'onPageStart'
 		);
 
+		$eventManager->registerEventHandler(
+			'wlbl.twigrix',
+			'onAddExtensions',
+			$this->MODULE_ID,
+			'\Wlbl\Tools\EventHandlers',
+			'twigCustomFunctions'
+		);
+
 		return true;
 	}
 
@@ -68,6 +76,14 @@ Class wlbl_tools extends CModule
 			$this->MODULE_ID,
 			'\Wlbl\Tools\EventHandlers',
 			'onPageStart'
+		);
+
+		$eventManager->unRegisterEventHandler(
+			'wlbl.twigrix',
+			'onAddExtensions',
+			$this->MODULE_ID,
+			'\Wlbl\Tools\EventHandlers',
+			'twigCustomFunctions'
 		);
 
 		return true;

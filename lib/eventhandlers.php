@@ -2,6 +2,7 @@
 
 namespace Wlbl\Tools;
 
+use Bitrix\Main\EventResult;
 use Bitrix\Main\Loader;
 
 /**
@@ -20,5 +21,16 @@ class EventHandlers
 	public static function onPageStart()
 	{
 		Loader::includeModule('wlbl.tools');
+	}
+
+	public static function twigCustomFunctions()
+	{
+		$extensions = [
+			new TwigExtension(),
+		];
+
+		$result = new EventResult(EventResult::SUCCESS, $extensions);
+
+		return $result;
 	}
 }
