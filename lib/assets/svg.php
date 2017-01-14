@@ -40,7 +40,7 @@ class Svg
 
 	public static function getDefaultDir()
 	{
-		$dir = Configuration::getValue('wlbl.tools')['svgDefaultDir'];
+		$dir = Configuration::getValue('wlbl.tools')['svgDir'];
 
 		if (!empty($dir)) {
 			return $dir;
