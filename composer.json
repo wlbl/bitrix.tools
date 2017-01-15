@@ -1,6 +1,6 @@
 {
 	"name": "wlbl/bitrix.tools",
-	"description": "Набор полезных хедперов для повседневной работы с Bitrix",
+	"description": "Набор полезных хелперов для повседневной работы с Bitrix",
 	"keywords": ["bitrix"],
 	"homepage": "http://wlbl.ru",
 	"type": "bitrix-d7-module",

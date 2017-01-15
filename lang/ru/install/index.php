@@ -1,6 +1,6 @@
 <?php
 $MESS['WLBL_TOOLS_MODULE_NAME'] = "Wlbl Bitrix Tools";
-$MESS['WLBL_TOOLS_MODULE_DESC'] = "Набор полезных хедперов для повседневной работы с Bitrix";
+$MESS['WLBL_TOOLS_MODULE_DESC'] = "Набор полезных хелперов для повседневной работы с Bitrix";
 
 $MESS['WLBL_TOOLS_INSTALL_TITLE'] = "Установка модуля 'Wlbl Bitrix Tools'";
 $MESS['WLBL_TOOLS_UNINSTALL_TITLE'] = "Удаление модуля 'Wlbl Bitrix Tools'";
