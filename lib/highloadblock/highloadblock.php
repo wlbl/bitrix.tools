@@ -19,11 +19,11 @@ class HighloadBlock
 		if (Loader::includeModule('highloadblock')) {
 			if (empty($key)) {
 				$key = 'ID';
-
-				return HighloadBlockTable::compileEntity(HighloadBlockTable::getRow([
-					'filter' => [$key => $value]
-				]))->getDataClass();
 			}
+
+			return HighloadBlockTable::compileEntity(HighloadBlockTable::getRow([
+				'filter' => [$key => $value]
+			]))->getDataClass();
 		}
 
 		return false;
