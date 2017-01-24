@@ -63,6 +63,14 @@ Class wlbl_tools extends CModule
 			'twigCustomFunctions'
 		);
 
+		$eventManager->registerEventHandler(
+			'iblock',
+			'OnIBlockPropertyBuildList',
+			$this->MODULE_ID,
+			'\Wlbl\Tools\UserType\YouTube',
+			'getUserTypeDescription'
+		);
+
 		return true;
 	}
 
@@ -84,6 +92,14 @@ Class wlbl_tools extends CModule
 			$this->MODULE_ID,
 			'\Wlbl\Tools\EventHandlers',
 			'twigCustomFunctions'
+		);
+
+		$eventManager->unRegisterEventHandler(
+			'iblock',
+			'OnIBlockPropertyBuildList',
+			$this->MODULE_ID,
+			'\Wlbl\Tools\UserType\YouTube',
+			'getUserTypeDescription'
 		);
 
 		return true;
