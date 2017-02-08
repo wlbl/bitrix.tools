@@ -43,8 +43,6 @@ class Iblock
 
 			if (!empty($sid)) {
 				$query->addFilter('LID', $sid);
-			} else {
-				$query->addFilter('LID', Context::getCurrent()->getSite());
 			}
 
 			if (!empty($type)) {
