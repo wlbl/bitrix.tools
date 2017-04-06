@@ -1,6 +1,8 @@
 <?php
 namespace Wlbl\Tools;
 
+use Symfony\Component\VarDumper\VarDumper;
+
 class TwigExtension extends \Twig_Extension
 {
 	public function getName()
@@ -14,8 +16,30 @@ class TwigExtension extends \Twig_Extension
 	 */
 	public function getFunctions()
 	{
-		return [
-			new \Twig_SimpleFunction('getSvg', ['\\Wlbl\\Tools\\Assets\\Svg', 'get'], ['code', 'class', 'dir']),
+		$functions = [
+			new \Twig_SimpleFunction('getSvg', ['\\Wlbl\\Tools\\Assets\\Svg', 'get']),
+			new \Twig_SimpleFunction(
+				'dump',
+				[self::class, 'dump'],
+				array(
+					'needs_environment' => true
+				)
+			),
 		];
+
+		return $functions;
+	}
+
+	public static function dump(\Twig_Environment $env, $var)
+	{
+		if (!$env->isDebug()) {
+			return null;
+		}
+
+		ob_start();
+
+		VarDumper::dump($var);
+
+		return ob_get_clean();
 	}
 }
