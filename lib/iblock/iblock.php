@@ -2,9 +2,10 @@
 namespace Wlbl\Tools\Iblock;
 
 use Bitrix\Iblock\IblockTable;
+use Bitrix\Iblock\IblockSiteTable;
 use Bitrix\Main\ArgumentNullException;
 use Bitrix\Main\Context;
-use Bitrix\Main\Entity\ExpressionField;
+use Bitrix\Main\Entity\ReferenceField;
 use Bitrix\Main\Loader;
 
 class Iblock
@@ -36,13 +37,17 @@ class Iblock
 			$query->setFilter([
 				'ACTIVE' => 'Y',
 				'CODE' => $code,
-			])->registerRuntimeField(
-				'LID',
-				new ExpressionField('LID', 'LID')
-			)->setSelect(['ID']);
+			])->setSelect(['ID'])->setLimit(1);
 
 			if (!empty($sid)) {
-				$query->addFilter('LID', $sid);
+				$query->registerRuntimeField(
+					'SITE',
+					new ReferenceField(
+						'SITE',
+						IblockSiteTable::class,
+						['=this.ID' => 'ref.IBLOCK_ID']
+					)
+				)->addFilter('SITE.SITE_ID', $sid);
 			}
 
 			if (!empty($type)) {
