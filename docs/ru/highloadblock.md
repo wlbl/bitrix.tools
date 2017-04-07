@@ -5,6 +5,7 @@
 Wlbl\Tools\HighloadBlock\HighloadBlock::getClass($value, $key = 'ID');
 ```
 Данный метод возвращает строку содержащую полное имя класса HighloadBlock'а (наследника Bitrix\Main\Entity\DataManager)
+
 * `$value` - значение по которому осуществляется поиск
 * `$key` - клюс (колонка в бд) в которой ищется значение
 
