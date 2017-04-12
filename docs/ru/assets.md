@@ -11,6 +11,7 @@ Wlbl\Tools\Assets\Svg::get($code, $class = '', $dir = '');
 * `$dir` - директория где располагаются svg файлы, относительно DOCUMENT_ROOT
 
 ## Конфигурация
+
 * `svgDir` - путь до папки с svg файлами относительно DOCUMENT_ROOT
 
 Настройки задаются в файле .settings.php или .settings_extra.php в блоке `wlbl.tools`
@@ -25,4 +26,13 @@ Wlbl\Tools\Assets\Svg::get($code, $class = '', $dir = '');
         ],
         // ...
 ];
+```
+
+## Консольные команды
+
+Доступно только в dev-master version
+
+Если у Вас в проекте используется [notamedia/console-jedi](https://github.com/notamedia/console-jedi), то установить путь до папки с svg файлами можно так
+```
+./vendor/bin/jedi wlbl.tools:svg:set-dir /path/to/svg/dir/from/document/root/
 ```

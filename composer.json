@@ -25,6 +25,7 @@
 		"symfony/var-dumper": "^3.2"
 	},
 	"suggest": {
-		"wlbl/twigrix": "Интеграция Twig в Битрикс"
+		"wlbl/twigrix": "Интеграция Twig в Битрикс",
+		"notamedia/console-jedi": "Добавляет консольные команды"
 	}
 }
