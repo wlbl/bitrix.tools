@@ -10,9 +10,11 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class SvgSetDirCommand extends BitrixCommand
 {
+	protected $module = 'wlbl.tools';
+
 	protected function configure()
 	{
-		$this->setName('wlbl.tools:svg:set-dir')
+		$this->setName($this->module . ':svg:set-dir')
 			->setDescription('Set svg dir')
 			->setHelp('Set svg dir for \Wlbl\Tools\Assets functionality')
 			->addArgument('dir', InputArgument::REQUIRED, 'Dir from document root');
@@ -28,12 +30,12 @@ class SvgSetDirCommand extends BitrixCommand
 			$dir .= '/';
 		}
 
-		$value = Configuration::getValue('wlbl.tools');
+		$value = Configuration::getValue($this->module);
 		$value['svgDir'] = $dir;
 
 		$config = Configuration::getInstance();
 		$config->add(
-			'wlbl.twigrix',
+			$this->module,
 			$value
 		);
 
